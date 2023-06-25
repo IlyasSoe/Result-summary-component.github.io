@@ -1,0 +1,194 @@
+:root {
+    --bgc1: hsl(252, 100%, 67%);
+    --bgc2:hsl(241, 81%, 54%);
+    --bgc3:hsla(256, 72%, 46%, 1);
+    --bgc4:hsla(241, 72%, 46%, 0);
+
+    --sc1:hsl(0, 100%, 67%);
+    --sc2:hsl(39, 100%, 56%);
+    --sc3:hsl(166, 100%, 37%);
+    --sc4:hsl(234, 85%, 45%);
+
+    --sc1a:hsla(0, 100%, 67%, 0.1);
+    --sc2a:hsla(39, 100%, 56%, 0.1);
+    --sc3a:hsla(166, 100%, 37%, 0.1);
+    --sc4a:hsla(234, 85%, 45%, 0.1);
+
+    --cl1:hsl(0, 0%, 100%);
+    --cl2:hsl(241, 100%, 89%);
+    --cl3:hsl(224, 30%, 27%);
+
+    --shdl: hsla(255, 100%, 50%, 0.2);
+}
+@font-face {
+    font-family: HankenGrotesk;
+    src: url('./assets/fonts/static/HankenGrotesk-Medium.ttf');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* layout of ~ Mobile */
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling head */
+
+.head {
+    width: 100%;
+    height: 356px;
+    background-image: linear-gradient(var(--bgc1), var(--bgc2));
+    border-radius: 0 0 35px 35px;
+    position: relative;
+}
+.head .circle {
+    background-image: linear-gradient(var(--bgc3), var(--bgc4));
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    top: 70px;
+    transform: translate(-50%);
+}
+p {
+    font-family: HankenGrotesk;
+}
+.head p, .circle p {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+.head > p {
+    color: var(--cl2);
+}
+.fpr {
+    margin-top: 28px;
+}
+.head .tpr {
+    bottom: 95px;
+    color: var(--cl1);
+    font-size: 20px;
+}
+.head .thpr {
+    bottom: 40px;
+    font-size: 15px;
+    text-align: center;
+    left:0;
+    right:0;
+    transform: translate(0);
+}
+.grtitle {
+    color: var(--cl1);
+    font-size: 40px;
+    font-family: HankenGrotesk;
+    font-weight: 800;
+    margin-top: 42px;
+}
+.ltitle {
+    margin-top: 102px;
+    font-size: 14px;
+    color:var(--cl2);
+}
+
+/* End ~ Styling head */
+/* Styling Summary */
+
+.summary {
+    margin: 26px;
+}
+.summary p span {
+    color: var(--cl3);
+}
+.summary .p1 {
+    font-weight: 700;
+    margin-bottom: 26px;
+    color: var(--cl3);
+}
+.summary div {
+    display: flex;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+.summary div span {
+    flex: 10%;
+}
+.summary div p:first-of-type {
+    flex: 65%;
+}
+.summary div p:last-of-type {
+    flex: 25%;
+}
+.summary .reaction p:first-of-type {
+    color: var(--sc1);
+}
+.summary .reaction {
+    background-color: var(--sc1a);
+}
+.summary .memory p:first-of-type {
+    color: var(--sc2);
+}
+.summary .memory {
+    background-color: var(--sc2a);
+}
+.summary .verbal p:first-of-type {
+    color: var(--sc3);
+}
+.summary .verbal {
+    background-color: var(--sc3a);
+}
+.summary .visual p:first-of-type {
+    color: var(--sc4);
+}
+.summary .visual {
+    background-color: var(--sc4a);
+}
+.summary div p:last-of-type {
+    justify-content: flex-end;
+}
+.continue {
+    padding: 15px;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    margin-top: 5px;
+    background-color:var(--cl3);
+    font-family: HankenGrotesk;
+    color: var(--cl1);
+    font-size: 15px;
+}
+.continue:hover {
+    background-image: linear-gradient(var(--bgc1), var(--bgc2));
+}
+
+/* End ~ Styling Summary */
+/* End ~ layout of ~ Mobile */
+/* layout of Desktop */
+
+@media only screen and (min-width: 592px) and (max-width: 1440px) {
+    .container {
+        flex-direction: row;
+        position: absolute;
+        width: min(735px, 100%);
+        top: 50%;
+        left: 50%;
+        height: 442px;
+        transform: translate(-50%, -50%);
+        border-radius: 35px;
+        box-shadow: 0 8px 32px 0 var(--shdl);
+    }
+    .head {
+        flex: 50%;
+        height: 100%;
+        border-radius: 35px;
+    }
+    .summary {
+        flex: 50%;
+    }
+} 

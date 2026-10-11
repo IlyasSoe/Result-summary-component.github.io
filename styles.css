@@ -171,7 +171,7 @@ p {
 /* End ~ layout of ~ Mobile */
 /* layout of Desktop */
 
-@media only screen and (min-width: 592px) and (max-width: 1440px) {
+@media only screen and (min-width: 592px) {
     .container {
         flex-direction: row;
         position: absolute;
